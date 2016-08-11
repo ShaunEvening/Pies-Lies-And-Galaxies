@@ -1,0 +1,133 @@
+body {
+  background-color: #fffde7;
+  width: 100vw;
+  height: 100vh;
+}
+
+.counter {
+  width: 100%;
+  height: 35%;
+  position: absolute;
+  bottom: 0px;
+  background-color: transparent;
+  z-index: 5;
+}
+
+img.food-left {
+  height: 20%;
+}
+
+img.food-right {
+  height: 20%;
+}
+
+.alien-left {
+  height: 100%;
+}
+
+.alien-right {
+  height: 100%;
+}
+
+.under-counter {
+  background-color: #cfd8dc;
+  width: 95%;
+  height: 85%;
+  display: block;
+  margin: 0 auto;
+}
+
+.counter-top {
+  width: 98%;
+  height: 15%;
+  border-radius: 3px;
+  display:block;
+  margin: 0 auto;
+  background-color: #78909c
+}
+
+.hud-box {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20%;
+  padding: 15px;
+  z-index: 100;
+}
+
+.questions-panel {
+  width: 95%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 auto;
+  display: block;
+}
+
+button.center-btn {
+  margin: 0 auto;
+  display: block;
+  width: 95%;
+}
+
+.query-section {
+  width: 50%;
+  margin-left: 25%;
+  background-color: rgba(255,255,255,0.0);
+  z-index: 40;
+}
+
+input[type=text] {
+  background-color: white;
+  border: none;
+  padding: 5px 15px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+input[type=text]:focus:not([readonly]) {
+  border-bottom: none;
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.full-container {
+  width: 100%;
+  height: 100%;
+}
+
+.aliens {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  left: 20%;
+  bottom: 0px;
+  z-index: 4;
+}
+
+.aliens.alien-box {
+  width: 30%;
+  height: 100%;
+  display: inline-block;
+}
+
+.aliens.food-box {
+  width: 40%;
+  display: inline-block;
+}
+
+img.alien-img {
+  width:100%;
+}
+
+img.food-img {
+  width:100%;
+}
+
+.output-box {
+  position: absolute;
+  width: 30%;
+  height: 20px;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+}
