@@ -3,7 +3,7 @@ source "https://rubygems.org"
 
 gem 'rake'
 gem 'activesupport'
-
+gem 'json'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'sinatra-activerecord'
@@ -20,6 +20,6 @@ end
 
 # bundle install --without test --without development
 group :production do
-  # use postgres in production, or move outside a group if your app uses postgres for development and production 
+  # use postgres in production, or move outside a group if your app uses postgres for development and production
   gem 'pg'
 end

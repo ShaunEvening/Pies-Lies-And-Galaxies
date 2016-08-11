@@ -12,7 +12,12 @@ class Game
   end
 
   def evaluate(query)
+    puts "Output method"
     eval(query)
+  end
+
+  def winner?(solution)
+    solution == pie_of_life
   end
 
   private

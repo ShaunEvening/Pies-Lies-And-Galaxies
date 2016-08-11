@@ -1,4 +1,10 @@
 $(document).ready(function() {
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('#ask_button').click(function() {
+    $.post("http://localhost:3000/ask", { query: $('#query').val() })
+      .done(function(response) {
+        $('#output_box').append(response);
+      });
+  });
+
 });
