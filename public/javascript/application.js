@@ -21,12 +21,26 @@ $(document).ready(function() {
   });
 
   $('#zip').on('click', function() {
-    var contents = String($('#query').val())
-    $('#query').val(contents + 'zip.ask(')
+    var contents = $('#query').val();
+    $('#query').val(contents + 'zip.ask(');
   });
 
   $('#zap').on('click', function() {
-    var contents = String($('#query').val())
-    $('#query').val(contents + 'zap.ask(')
+    var contents = $('#query').val();
+    $('#query').val(contents + 'zap.ask(');
+  });
+
+  $('#red_pie').on('click', function() {
+    $.post("http://localhost:3000/solve", { solution: "red_pie" })
+      .done(function(response) {
+        $('#output_box').val(response);
+      });
+  });
+
+  $('#purple_pie').on('click', function() {
+    $.post("http://localhost:3000/solve", { solution: "purple_pie" })
+      .done(function(response) {
+        $('#output_box').val(response);
+      });
   });
 });

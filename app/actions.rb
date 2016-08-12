@@ -14,3 +14,11 @@ post '/ask' do
     "I don't know this language?"
   end
 end
+
+post '/solve' do
+  if session[:game].winner?(params[:solution])
+    "Correct! The terrible burden of immortality is forever yours to bear. Congratulations!"
+  else
+    "Oh no! You were wrong! You frown before embarking on the long, mildly unpleasant ride home."
+  end
+end
