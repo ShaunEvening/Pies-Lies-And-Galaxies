@@ -12,9 +12,12 @@ $(document).ready(function() {
 
   $('#info').openModal();
 
-  $(document).ready(function(){
-    $('.tooltipped').tooltip({delay: 50});
+  $('.tooltipped').tooltip({delay: 50});
+
+  $('#query').on('click',function(){
+    $('#query-builder').openModal()
   });
+
 
   $('#ask_button').on('click', function() {
     var query = $('#function-call').val().concat($('#query').val());
