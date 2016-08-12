@@ -16,7 +16,7 @@ body {
 
 .counter {
   width: 100%;
-  height: 15%;
+  height: 18%;
   position: absolute;
   bottom: 0px;
   /*background: url('../images/static/full-counter.png') no-repeat;*/
@@ -45,7 +45,7 @@ body {
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 20%;
+  width: 15%;
   padding: 15px;
   z-index: 100;
 }
@@ -125,16 +125,18 @@ img.food-img {
 
 #zip {
   position: absolute;
-  width: 30%;
-  bottom: 20px;
-  left: 20%;
+  width: 15%;
+  bottom: 50px;
+  left: 30%;
+  cursor: pointer;
 }
 
 #zap {
   position: absolute;
-  width:30%;
-  bottom: 20px;
-  right: 20%;
+  width:15%;
+  bottom: 50px;
+  right: 30%;
+  cursor: pointer;
 }
 
 .info-btn {
@@ -151,24 +153,28 @@ img.food-img {
 .pie-box {
   width: 30%;
   position: absolute;
-  top: 8%;
+  top: 20%;
   left: 35%;
   border-bottom: 10px solid #4C4C4C;
   box-shadow: 0 10px 0 #383838;
 }
 
 .pi-p {
-  width: 50%;
+  width: 30%;
   margin: 0;
   display: inline;
   float: left;
+  cursor: pointer;
+  margin-left: 30px;
 }
 
 .pur-p {
-  width: 50%;
+  width: 30%;
   margin: 0;
   display: inline;
-  float: left;
+  float: right;
+  cursor: pointer;
+  margin-right: 30px;
 }
 
 .btn {
@@ -181,6 +187,14 @@ img.food-img {
 
 #ask_button {
   box-shadow: 0px 4px #0091ea, 0px -4px #0091ea, 4px 0px #0091ea, -4px 0px #0091ea;
+}
+
+#info-btn {
+  box-shadow: 0px 4px #0091ea, 0px -4px #0091ea, 4px 0px #0091ea, -4px 0px #0091ea;
+}
+
+#help-btn {
+  box-shadow: 0px 4px #7b1fa2, 0px -4px #7b1fa2, 4px 0px #7b1fa2, -4px 0px #7b1fa2;
 }
 
 .modal {
@@ -196,8 +210,8 @@ img.food-img {
 
 .response-container {
   position: absolute;
-  width: 30%;
-  height: 150px;
+  width: 20%;
+  height: 120px;
   top: 10px;
   left: 20px;
 }

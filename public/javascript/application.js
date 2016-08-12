@@ -12,6 +12,10 @@ $(document).ready(function() {
 
   $('#info').openModal();
 
+  $(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 50});
+  });
+
   $('#ask_button').on('click', function() {
     $.post("http://localhost:3000/ask", { query: $('#query').val() })
       .done(function(response) {
