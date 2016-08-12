@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  var queryCount = 0;
+
   $('.modal-trigger').leanModal({
       dismissible: true, // Modal can be dismissed by clicking outside of the modal
       opacity: .5, // Opacity of modal background
@@ -24,6 +26,7 @@ $(document).ready(function() {
     query = appendBrackets(query);
     $.post("http://localhost:3000/ask", { query: query })
       .done(function(response) {
+        queryCount++;
         $('#output_box').append("you: " + query + "\n" + response + "\n");
         $('#query').val("");
       });
@@ -68,6 +71,15 @@ $(document).ready(function() {
         $('#output_box').append("\n" + response);
       });
   });
+
+  $('.bldr-obj').on('click', function() {
+    $('#query').append($(this).attr('id'));
+  });
+
+  $('.bldr-rel').on('click', function() {
+    $('#query').append(' ' + $(this).attr('id') + ' ');
+  });
+
 });
 
 var appendBrackets = function(input) {
