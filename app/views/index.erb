@@ -1,10 +1,10 @@
 
-<img src="images/sprites/zap-with-a-hat.gif"  id="zap"/>
-<img src="images/sprites/zip.gif"  id="zip"/>
+<img src="images/sprites/zap-crop.gif" id="zap" class="tooltipped" data-position="top" data-tooltip="Ask zap"/>
+<img src="images/sprites/zip-crop.gif"  id="zip" class="tooltipped" data-position="top" data-tooltip="Ask Zip"/>
 
 <div class="pie-box">
-  <img src="images/sprites/pink-pie.gif" class="pi-p" id="red-pie" />
-  <img src="images/sprites/purple-pie.gif" class="pur-p" id="purple-pie" />
+  <img src="images/sprites/pink-pie.gif" class="pi-p tooltipped" id="red_pie" data-position="top" data-tooltip="Pick the red pie" />
+  <img src="images/sprites/purple-pie.gif" class="pur-p tooltipped" id="purple_pie" data-position="top" data-tooltip="Pick the purple pie"/>
 </div>
 
 <div class="counter">
@@ -12,27 +12,25 @@
 </div>
 
 <div class="hud-box">
-  <div class="row">
+  <!-- <div class="row">
     <div class="questions-panel z-depth-1">
       <h6 class="center 8-bit">Please ask a question</h6>
     </div>
+  </div> -->
+  <div class="row">
+    <a id="info-btn" class="btn waves-effect waves-light light-blue center-btn modal-trigger" href="#info" style="width: 100%;">
+      info
+    </a>
   </div>
   <div class="row">
-    <button id="give-up-btn" class="btn waves-effect waves-light red center-btn">
+    <a id="help-btn" class="btn waves-effect waves-light purple center-btn" style="width: 100%;">
+      help!
+    </a>
+  </div>
+  <div class="row">
+    <a id="give-up-btn" class="btn waves-effect waves-light red center-btn" style="width: 100%;">
       Give up
-    </button>
-  </div>
-  <div class="row">
-    <div class="col s6">
-      <button id="info-btn" class="btn waves-effect waves-light light-blue center-btn modal-trigger" data-target="info">
-        info
-      </button>
-    </div>
-    <div class="col s6">
-      <button id="help-btn" class="btn waves-effect waves-light purple center-btn">
-        help!
-      </button>
-    </div>
+    </a>
   </div>
 </div>
 

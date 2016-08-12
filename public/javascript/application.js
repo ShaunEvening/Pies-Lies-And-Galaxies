@@ -14,6 +14,10 @@ $(document).ready(function() {
 
   $('#info').openModal();
 
+  $(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 50});
+  });
+
   $('#ask_button').on('click', function() {
     var query = $('#function-call').val().concat($('#query').val());
     query = appendBrackets(query);
