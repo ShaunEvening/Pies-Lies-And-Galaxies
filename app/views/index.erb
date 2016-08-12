@@ -7,12 +7,6 @@
   <img src="images/sprites/purple-pie.gif" class="pur-p"/>
 </div>
 
-<button class="btn-floating btn-large waves-effect waves-light light-blue info-btn modal-trigger" data-target="info">
-  <i class="material-icons medium">
-    info
-  </i>
-</button>
-
 <div class="counter">
   <img src="images/static/full-counter.png;" style="width: 80%; position: absolute; left: 10%"/>
 </div>
@@ -23,15 +17,22 @@
       <h6 class="center 8-bit">Please ask a question</h6>
     </div>
   </div>
-  <!-- <div class="row">
-    <button class="btn waves-effect waves-light green center-btn">
-      Solve
-    </button>
-  </div> -->
   <div class="row">
     <button id="give-up-btn" class="btn waves-effect waves-light red center-btn">
       Give up
     </button>
+  </div>
+  <div class="row">
+    <div class="col s6">
+      <button id="info-btn" class="btn waves-effect waves-light light-blue center-btn modal-trigger" data-target="info">
+        info
+      </button>
+    </div>
+    <div class="col s6">
+      <button id="help-btn" class="btn waves-effect waves-light purple center-btn">
+        help!
+      </button>
+    </div>
   </div>
 </div>
 
@@ -61,6 +62,9 @@ Ennui mlkshk pabst kogi, chillwave tumblr crucifix. Etsy chia cold-pressed, kits
   </div>
 </div>
 
-<div class="response">
-  <textarea id="output_box" readonly></textarea>
+<div class="response-container">
+  <h5 class="white-text">Dialog:</h5>
+  <div class="response">
+    <textarea id="output_box" readonly></textarea>
+  </div>
 </div>
