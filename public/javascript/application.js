@@ -28,8 +28,10 @@ $(document).ready(function() {
       .done(function(response) {
         queryCount++;
         $('#output_box').append("you: " + query + "\n" + response + "\n");
-        $('#query').val("");
       });
+    $('#askee-value').text("<Clicking an alien assigns them a query>");
+    $('#query').val("");
+    $('#function-call').val("");
   });
 
   $('#zip').on('click', function() {
@@ -38,9 +40,9 @@ $(document).ready(function() {
 
     var askeeLine = $('#askee-value').text();
     if (askeeLine == "<Clicking an alien assigns them a query>") {
-      $('#askee-value').text("Ask Zip:");
+      $('#askee-value').text("Ask Zip if ");
     } else {
-      askeeLine = askeeLine.replace(":", " to ask Zip:")
+      askeeLine = askeeLine.replace("if", "to ask Zip if")
       $('#askee-value').text(askeeLine)
     }
   });
@@ -51,9 +53,9 @@ $(document).ready(function() {
 
     var askeeLine = $('#askee-value').text();
     if (askeeLine == "<Clicking an alien assigns them a query>") {
-      $('#askee-value').text("Ask Zap:");
+      $('#askee-value').text("Ask Zap if ");
     } else {
-      askeeLine = askeeLine.replace(":", " to ask Zap:")
+      askeeLine = askeeLine.replace("if", "to ask Zap if")
       $('#askee-value').text(askeeLine)
     }
   });
@@ -73,11 +75,21 @@ $(document).ready(function() {
   });
 
   $('.bldr-obj').on('click', function() {
-    $('#query').append($(this).attr('id'));
+    var objId = $(this).attr('id');
+    $('#query').val($('#query').val() + objId);
+    $('#askee-value').text($('#askee-value').text() + ' ' + $(this).text())
   });
 
-  $('.bldr-rel').on('click', function() {
-    $('#query').append(' ' + $(this).attr('id') + ' ');
+  $('#is').on('click', function() {
+    var objId = $(this).attr('id');
+    $('#query').val($('#query').val() + ' == ');
+    $('#askee-value').text($('#askee-value').text() + ' ' + $(this).text())
+  });
+
+  $('#is-not').on('click', function() {
+    var objId = $(this).attr('id');
+    $('#query').val($('#query').val() + ' != ');
+    $('#askee-value').text($('#askee-value').text() + ' ' + $(this).text())
   });
 
 });

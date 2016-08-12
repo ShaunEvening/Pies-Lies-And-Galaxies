@@ -3,8 +3,8 @@
 <img src="images/sprites/zip-crop.gif"  id="zip" class="tooltipped" data-position="top" data-tooltip="Ask Zip"/>
 
 <div class="pie-box">
-  <img src="images/sprites/pink-pie.gif" class="pi-p tooltipped" id="red_pie" data-position="top" data-tooltip="Pick the red pie" />
-  <img src="images/sprites/purple-pie.gif" class="pur-p tooltipped" id="purple_pie" data-position="top" data-tooltip="Pick the purple pie"/>
+  <img src="images/sprites/pink-pie.gif" class="pi-p tooltipped" id="red-pie" data-position="top" data-tooltip="Pick the red pie" />
+  <img src="images/sprites/purple-pie.gif" class="pur-p tooltipped" id="purple-pie" data-position="top" data-tooltip="Pick the purple pie"/>
 </div>
 
 <div class="counter">
@@ -51,18 +51,18 @@
   <div class="modal-content">
     <h4 class="center">Build-a-query</h4>
     <p class="center">
-      <button class="btn btn-flat blder-obj">The veritopian</button>
-      <button class="btn btn-flat blder-obj">The misinformian </button>
-      <button class="btn btn-flat blder-obj">zip</button>
-      <button class="btn btn-flat blder-obj">zap</button>
-      <button class="btn btn-flat blder-obj">The Pie of life</button>
-      <button class="btn btn-flat blder-obj">The pie of vague discomfort</button>
-      <button class="btn btn-flat blder-obj">the red pie</button>
-      <button class="btn btn-flat blder-obj">the purple pie</button>
+      <button class="btn btn-flat bldr-obj" id="veritopian">The veritopian</button>
+      <button class="btn btn-flat bldr-obj" id="misinformian">The misinformian </button>
+      <button class="btn btn-flat bldr-obj" id="zip">zip</button>
+      <button class="btn btn-flat bldr-obj" id="zap">zap</button>
+      <button class="btn btn-flat bldr-obj" id="pie_of_life">The Pie of life</button>
+      <button class="btn btn-flat bldr-obj" id="pie_of_vague_discomfort">The pie of vague discomfort</button>
+      <button class="btn btn-flat bldr-obj" id="red_pie">the red pie</button>
+      <button class="btn btn-flat bldr-obj" id="purple-pie">the purple pie</button>
       <br/>
       <hr/>
-      <button class="btn btn-flat blder-obj">is</button>
-      <button class="btn btn-flat blder-obj">is not</button>
+      <button class="btn btn-flat bldr-rel" id="is">is</button>
+      <button class="btn btn-flat bldr-rel" id="is-not">is not</button>
     </p>
   </div>
   <div class="modal-footer">
@@ -75,7 +75,7 @@
   <h5 class="white-text" id="askee-value" style="background-color: black;">&lt;Clicking an alien assigns them a query&gt;</h5>
   <div class="row valign-wrapper">
     <div class ="col s9">
-      <input type="text" class="query-box z-depth-2" id="query"/>
+      <input type="text" class="query-box z-depth-2" id="query" readonly />
     </div>
     <div class ="col s3 valign-wrapper">
       <button id="ask_button" class="btn btn-inline light-blue lighten-2 valign waves-effect waves-light">ask</button>
