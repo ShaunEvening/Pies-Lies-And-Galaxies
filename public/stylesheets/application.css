@@ -1,36 +1,31 @@
+@font-face {
+    font-family: 'bit'; /*a name to be used later*/
+    src: url('../font/8-BIT_WONDER.ttf'); /*URL to font*/
+}
+
+html {
+  font-family: 'bit';
+}
+
 body {
-  background-color: #fffde7;
+  background: url('../images/static/background.png');
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .counter {
   width: 100%;
-  height: 35%;
+  height: 15%;
   position: absolute;
   bottom: 0px;
-  background-color: transparent;
+  /*background: url('../images/static/full-counter.png') no-repeat;*/
   z-index: 5;
-}
-
-img.food-left {
-  height: 20%;
-}
-
-img.food-right {
-  height: 20%;
-}
-
-.alien-left {
-  height: 100%;
-}
-
-.alien-right {
-  height: 100%;
+  overflow: hidden;
 }
 
 .under-counter {
-  background-color: #cfd8dc;
+  background: url('../images/static/counter.png');
   width: 95%;
   height: 85%;
   display: block;
@@ -38,6 +33,7 @@ img.food-right {
 }
 
 .counter-top {
+  background: url('../images/static/countertop.png');
   width: 98%;
   height: 15%;
   display:block;
@@ -57,10 +53,10 @@ img.food-right {
 .questions-panel {
   width: 95%;
   background-color: white;
-  border-radius: 5px;
   padding: 10px;
   margin: 0 auto;
   display: block;
+  box-shadow: 0px 4px #cfd8dc, 0px -4px #cfd8dc, 4px 0px #cfd8dc, -4px 0px #cfd8dc;
 }
 
 button.center-btn {
@@ -71,7 +67,8 @@ button.center-btn {
 
 .query-section {
   width: 50%;
-  margin-left: 25%;
+  margin-left: 20px;
+  margin-top: 20px;
   background-color: rgba(255,255,255,0.0);
   z-index: 40;
 }
@@ -82,11 +79,12 @@ input[type=text] {
   padding: 5px 15px;
   box-sizing: border-box;
   margin: 0;
+  box-shadow: 0px 5px #b0bec5, 0px -5px #b0bec5, 5px 0px #b0bec5, -5px 0px #b0bec5;
 }
 
 input[type=text]:focus:not([readonly]) {
   border-bottom: none;
-  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0px 5px #78909c, 0px -5px #78909c, 5px 0px #78909c, -5px 0px #78909c;
 }
 
 .full-container {
@@ -129,4 +127,69 @@ img.food-img {
   top: 10px;
   left: 10px;
   z-index: 100;
+}
+
+.zip {
+  position: absolute;
+  width: 30%;
+  bottom: 20px;
+  left: 20%;
+}
+
+.zap {
+  position: absolute;
+  width:30%;
+  bottom: 20px;
+  right: 20%;
+}
+
+.info-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  z-index: 1000;
+}
+
+.medium {
+  font-size: 2.5em !important;
+}
+
+.pie-box {
+  width: 30%;
+  position: absolute;
+  top: 8%;
+  left: 35%;
+  border-bottom: 10px solid #4C4C4C;
+  box-shadow: 0 10px 0 #383838;
+}
+
+.pi-p {
+  width: 50%;
+  margin: 0;
+  display: inline;
+  float: left;
+}
+
+.pur-p {
+  width: 50%;
+  margin: 0;
+  display: inline;
+  float: left;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+#give-up-btn {
+  box-shadow: 0px 4px #d50000, 0px -4px #d50000, 4px 0px #d50000, -4px 0px #d50000;
+}
+
+#ask {
+  box-shadow: 0px 4px #0091ea, 0px -4px #0091ea, 4px 0px #0091ea, -4px 0px #0091ea;
+}
+
+.modal {
+  border-radius: 0;
+  box-shadow: 0px 10px #b0bec5, 0px -10px #b0bec5, 10px 0px #b0bec5, -10px 0px #b0bec5;
 }
