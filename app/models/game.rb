@@ -7,7 +7,7 @@ class Game
   end
 
   attr_reader :pie_of_life, :pie_of_vague_discomfort, :misinformian, \
-              :veritopian, :zip, :zap, :left, :right
+              :veritopian, :zip, :zap, :red_pie, :purple_pie
 
   def initialize
     randomize_pies
@@ -20,14 +20,14 @@ class Game
   end
 
   def winner?(solution)
-    solution == pie_of_life
+    eval(solution) == pie_of_life
   end
 
   private
     def randomize_pies
-      @left = SpacePie.new()
-      @right = SpacePie.new()
-      pie_array = [@left, @right]
+      @red_pie = SpacePie.new()
+      @purple_pie = SpacePie.new()
+      pie_array = [@red_pie, @purple_pie]
       @pie_of_life = pie_array.delete_at(rand(1000) % pie_array.size)
       @pie_of_vague_discomfort = pie_array.pop
     end
