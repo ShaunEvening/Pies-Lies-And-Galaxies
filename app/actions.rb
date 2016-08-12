@@ -6,5 +6,11 @@ get '/' do
 end
 
 post '/ask' do
-  session[:game].evaluate(params[:query])
+  begin
+    session[:game].evaluate(params[:query].to_s) ? "Yes" : "No"
+  rescue Game::InvalidQueryError => e
+    e.message
+  rescue NameError => e
+    "I don't know this language?"
+  end
 end

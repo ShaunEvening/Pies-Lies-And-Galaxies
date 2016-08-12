@@ -7,4 +7,12 @@ $(document).ready(function() {
       });
   });
 
+  $('#zip').click(function() {
+    $('#query').attr('value', $('#query').val() + 'zip.ask(')
+  });
+
+  $('#zap').click(function() {
+    $('#query').attr('value', $('#query').val() + 'zap.ask(')
+  });
+
 });

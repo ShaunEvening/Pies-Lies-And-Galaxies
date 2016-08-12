@@ -3,6 +3,9 @@ require_relative "space_pie"
 
 class Game
 
+  class InvalidQueryError < StandardError
+  end
+
   attr_reader :pie_of_life, :pie_of_vague_discomfort, :misinformian, \
               :veritopian, :zip, :zap, :left, :right
 
@@ -12,8 +15,8 @@ class Game
   end
 
   def evaluate(query)
-    puts "Output method"
-    eval(query)
+    return eval(query) unless query.empty?
+    raise InvalidQueryError, "Did you have a question?"
   end
 
   def winner?(solution)
@@ -21,7 +24,6 @@ class Game
   end
 
   private
-
     def randomize_pies
       @left = SpacePie.new()
       @right = SpacePie.new()

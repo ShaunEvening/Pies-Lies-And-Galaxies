@@ -8,16 +8,12 @@ class Alien
   end
 
   def ask(query)
-    translate(game.evaluate(query))
+    puts "Calling #{query} from alien..."
+    game.evaluate(rephrase(query).to_s)
   end
 
   private
-
-    def translate(response)
-      if honest
-        response ? "Yes" : "No"
-      else
-        response ? "No" : "Yes"
-      end
+    def rephrase(response)
+      honest ? response : !response
     end
 end
