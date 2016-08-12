@@ -1,5 +1,5 @@
 body {
-  background-color: #ffecb3;
+  background: url('../images/static/background.png');
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -7,6 +7,7 @@ body {
 
 .counter {
   width: 100%;
+  height: 15%;
   position: absolute;
   bottom: 0px;
   /*background: url('../images/static/full-counter.png') no-repeat;*/
@@ -59,10 +60,10 @@ img.food-right {
 .questions-panel {
   width: 95%;
   background-color: white;
-  border-radius: 5px;
   padding: 10px;
   margin: 0 auto;
   display: block;
+  box-shadow: 4px 4px #cfd8dc;
 }
 
 button.center-btn {
@@ -152,7 +153,7 @@ img.food-img {
   position: absolute;
   bottom: 15px;
   right: 15px;
-
+  z-index: 1000;
 }
 
 .medium {
@@ -189,4 +190,17 @@ html {
   margin: 0;
   display: inline;
   float: left;
+}
+
+.btn {
+  border-radius: 0;
+  box-shadow: 4px 4px;
+}
+
+#give-up {
+  box-shadow: 4px 4px #d50000;
+}
+
+#ask {
+  box-shadow: 4px 4px #0091ea;
 }
