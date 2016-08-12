@@ -12,18 +12,21 @@ $(document).ready(function() {
 
   $('#info').openModal();
 
-  $('#ask_button').click(function() {
+  $('#ask_button').on('click', function() {
     $.post("http://localhost:3000/ask", { query: $('#query').val() })
       .done(function(response) {
         $('#output_box').append(response);
+        $('#query').val("")
       });
   });
 
-  $('#zip').click(function() {
-    $('#query').attr('value', $('#query').val() + 'zip.ask(')
+  $('#zip').on('click', function() {
+    var contents = String($('#query').val())
+    $('#query').val(contents + 'zip.ask(')
   });
-
-  $('#zap').click(function() {
-    $('#query').attr('value', $('#query').val() + 'zap.ask(')
+  
+  $('#zap').on('click', function() {
+    var contents = String($('#query').val())
+    $('#query').val(contents + 'zap.ask(')
   });
 });
