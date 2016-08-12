@@ -1,6 +1,6 @@
 
-<img src="images/sprites/zap-with-a-hat.gif" class="zap"/>
-<img src="images/sprites/zip.gif" class="zip"/>
+<img src="images/sprites/zap-with-a-hat.gif" class="zap" id="zap"/>
+<img src="images/sprites/zip.gif" class="zip" id="zip"/>
 
 <div class="pie-box">
   <img src="images/sprites/pink-pie.gif" class="pi-p"/>
@@ -56,7 +56,11 @@ Ennui mlkshk pabst kogi, chillwave tumblr crucifix. Etsy chia cold-pressed, kits
       <input type="text" class="query-box z-depth-2" id="query"/>
     </div>
     <div class ="col s3 valign-wrapper">
-      <button id="ask" class="btn btn-inline light-blue lighten-2 valign waves-effect waves-light">ask</button>
+      <button id="ask_button" class="btn btn-inline light-blue lighten-2 valign waves-effect waves-light">ask</button>
     </div>
   </div>
+</div>
+
+<div class="response">
+  <textarea id="output_box" readonly></textarea>
 </div>

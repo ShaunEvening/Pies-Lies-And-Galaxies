@@ -120,15 +120,6 @@ img.food-img {
   width:100%;
 }
 
-.output-box {
-  position: absolute;
-  width: 30%;
-  height: 20px;
-  top: 10px;
-  left: 10px;
-  z-index: 100;
-}
-
 .zip {
   position: absolute;
   width: 30%;
@@ -185,11 +176,28 @@ img.food-img {
   box-shadow: 0px 4px #d50000, 0px -4px #d50000, 4px 0px #d50000, -4px 0px #d50000;
 }
 
-#ask {
+#ask_button {
   box-shadow: 0px 4px #0091ea, 0px -4px #0091ea, 4px 0px #0091ea, -4px 0px #0091ea;
 }
 
 .modal {
   border-radius: 0;
   box-shadow: 0px 10px #b0bec5, 0px -10px #b0bec5, 10px 0px #b0bec5, -10px 0px #b0bec5;
+}
+
+.response {
+  position: absolute;
+  width: 20%;
+  height: 100px;
+  top: 100px;
+  left: 20px;
+  background-color: white;
+  box-shadow: 0px 4px #b0bec5, 0px -4px #b0bec5, 4px 0px #b0bec5, -4px 0px #b0bec5;
+}
+
+#output_box {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  resize: none;
 }
