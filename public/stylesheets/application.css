@@ -86,6 +86,7 @@ input[type=text] {
   padding: 5px 15px;
   box-sizing: border-box;
   margin: 0;
+  box-shadow: 4px 4px #b0bec5;
 }
 
 input[type=text]:focus:not([readonly]) {
