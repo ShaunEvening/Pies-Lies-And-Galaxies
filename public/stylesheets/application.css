@@ -1,16 +1,17 @@
 body {
-  background-color: #fffde7;
+  background-color: #ffecb3;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .counter {
   width: 100%;
-  height: 35%;
   position: absolute;
   bottom: 0px;
-  background-color: transparent;
+  /*background: url('../images/static/full-counter.png') no-repeat;*/
   z-index: 5;
+  overflow: hidden;
 }
 
 img.food-left {
@@ -30,7 +31,7 @@ img.food-right {
 }
 
 .under-counter {
-  background-color: #cfd8dc;
+  background: url('../images/static/counter.png');
   width: 95%;
   height: 85%;
   display: block;
@@ -38,6 +39,7 @@ img.food-right {
 }
 
 .counter-top {
+  background: url('../images/static/countertop.png');
   width: 98%;
   height: 15%;
   display:block;
@@ -71,7 +73,8 @@ button.center-btn {
 
 .query-section {
   width: 50%;
-  margin-left: 25%;
+  margin-left: 20px;
+  margin-top: 20px;
   background-color: rgba(255,255,255,0.0);
   z-index: 40;
 }
@@ -129,4 +132,61 @@ img.food-img {
   top: 10px;
   left: 10px;
   z-index: 100;
+}
+
+.zip {
+  position: absolute;
+  width: 30%;
+  bottom: 20px;
+  left: 20%;
+}
+
+.zap {
+  position: absolute;
+  width:30%;
+  bottom: 20px;
+  right: 20%;
+}
+
+.info-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+
+}
+
+.medium {
+  font-size: 2.5em !important;
+}
+
+@font-face {
+    font-family: 'bit'; /*a name to be used later*/
+    src: url('../font/8-BIT_WONDER.ttf'); /*URL to font*/
+}
+
+html {
+  font-family: 'bit';
+}
+
+.pie-box {
+  width: 30%;
+  position: absolute;
+  top: 10%;
+  left: 35%;
+  border-bottom: 10px solid #4C4C4C;
+  box-shadow: 0 10px 0 #383838;
+}
+
+.pi-p {
+  width: 50%;
+  margin: 0;
+  display: inline;
+  float: left;
+}
+
+.pur-p {
+  width: 50%;
+  margin: 0;
+  display: inline;
+  float: left;
 }
