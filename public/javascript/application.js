@@ -15,15 +15,18 @@ $(document).ready(function() {
   $('#ask_button').click(function() {
     $.post("http://localhost:3000/ask", { query: $('#query').val() })
       .done(function(response) {
-        $('#output_box').append(response);
+        $('#output_box').append("you: " + $('#query').val() + "\n" + response + "\n");
+        $('#query').val("");
       });
   });
 
   $('#zip').click(function() {
-    $('#query').attr('value', $('#query').val() + 'zip.ask(')
+    $('#query').attr('value', $('#query').val() + 'zip.ask(');
+    $('#query').focus();
   });
 
   $('#zap').click(function() {
-    $('#query').attr('value', $('#query').val() + 'zap.ask(')
+    $('#query').attr('value', $('#query').val() + 'zap.ask(');
+    $('#query').focus();
   });
 });

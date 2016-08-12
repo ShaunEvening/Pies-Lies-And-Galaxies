@@ -66,9 +66,10 @@ button.center-btn {
 }
 
 .query-section {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
   width: 50%;
-  margin-left: 20px;
-  margin-top: 20px;
   background-color: rgba(255,255,255,0.0);
   z-index: 40;
 }
@@ -79,12 +80,14 @@ input[type=text] {
   padding: 5px 15px;
   box-sizing: border-box;
   margin: 0;
-  box-shadow: 0px 5px #b0bec5, 0px -5px #b0bec5, 5px 0px #b0bec5, -5px 0px #b0bec5;
+  box-shadow: 0px 5px #546e7a, 0px -5px #546e7a, 5px 0px #546e7a, -5px 0px #546e7a;
+  font-family: 'Ubuntu Mono';
 }
 
 input[type=text]:focus:not([readonly]) {
   border-bottom: none;
-  box-shadow: 0px 5px #78909c, 0px -5px #78909c, 5px 0px #78909c, -5px 0px #78909c;
+  box-shadow: 0px 5px #455a64, 0px -5px #455a64, 5px 0px #455a64, -5px 0px #455a64;
+  font-family: 'Ubuntu Mono';
 }
 
 .full-container {
@@ -120,14 +123,14 @@ img.food-img {
   width:100%;
 }
 
-.zip {
+#zip {
   position: absolute;
   width: 30%;
   bottom: 20px;
   left: 20%;
 }
 
-.zap {
+#zap {
   position: absolute;
   width:30%;
   bottom: 20px;
@@ -187,12 +190,12 @@ img.food-img {
 
 .response {
   position: absolute;
-  width: 20%;
-  height: 100px;
-  top: 100px;
+  width: 30%;
+  height: 150px;
+  top: 20px;
   left: 20px;
   background-color: white;
-  box-shadow: 0px 4px #b0bec5, 0px -4px #b0bec5, 4px 0px #b0bec5, -4px 0px #b0bec5;
+  box-shadow: 0px 4px #546e7a, 0px -4px #546e7a, 4px 0px #546e7a, -4px 0px #546e7a;
 }
 
 #output_box {
@@ -200,4 +203,9 @@ img.food-img {
   overflow-y: scroll;
   overflow-x: hidden;
   resize: none;
+}
+
+#output_box:focus {
+  outline: none;
+
 }
