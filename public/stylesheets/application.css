@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'bit'; /*a name to be used later*/
+    src: url('../font/8-BIT_WONDER.ttf'); /*URL to font*/
+}
+
+html {
+  font-family: 'bit';
+}
+
 body {
   background: url('../images/static/background.png');
   width: 100vw;
@@ -13,22 +22,6 @@ body {
   /*background: url('../images/static/full-counter.png') no-repeat;*/
   z-index: 5;
   overflow: hidden;
-}
-
-img.food-left {
-  height: 20%;
-}
-
-img.food-right {
-  height: 20%;
-}
-
-.alien-left {
-  height: 100%;
-}
-
-.alien-right {
-  height: 100%;
 }
 
 .under-counter {
@@ -63,7 +56,7 @@ img.food-right {
   padding: 10px;
   margin: 0 auto;
   display: block;
-  box-shadow: 4px 4px #cfd8dc;
+  box-shadow: 0px 4px #cfd8dc, 0px -4px #cfd8dc, 4px 0px #cfd8dc, -4px 0px #cfd8dc;
 }
 
 button.center-btn {
@@ -86,12 +79,12 @@ input[type=text] {
   padding: 5px 15px;
   box-sizing: border-box;
   margin: 0;
-  box-shadow: 4px 4px #b0bec5;
+  box-shadow: 0px 5px #b0bec5, 0px -5px #b0bec5, 5px 0px #b0bec5, -5px 0px #b0bec5;
 }
 
 input[type=text]:focus:not([readonly]) {
   border-bottom: none;
-  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0px 5px #78909c, 0px -5px #78909c, 5px 0px #78909c, -5px 0px #78909c;
 }
 
 .full-container {
@@ -161,19 +154,10 @@ img.food-img {
   font-size: 2.5em !important;
 }
 
-@font-face {
-    font-family: 'bit'; /*a name to be used later*/
-    src: url('../font/8-BIT_WONDER.ttf'); /*URL to font*/
-}
-
-html {
-  font-family: 'bit';
-}
-
 .pie-box {
   width: 30%;
   position: absolute;
-  top: 10%;
+  top: 8%;
   left: 35%;
   border-bottom: 10px solid #4C4C4C;
   box-shadow: 0 10px 0 #383838;
@@ -195,13 +179,17 @@ html {
 
 .btn {
   border-radius: 0;
-  box-shadow: 4px 4px;
 }
 
-#give-up {
-  box-shadow: 4px 4px #d50000;
+#give-up-btn {
+  box-shadow: 0px 4px #d50000, 0px -4px #d50000, 4px 0px #d50000, -4px 0px #d50000;
 }
 
 #ask {
-  box-shadow: 4px 4px #0091ea;
+  box-shadow: 0px 4px #0091ea, 0px -4px #0091ea, 4px 0px #0091ea, -4px 0px #0091ea;
+}
+
+.modal {
+  border-radius: 0;
+  box-shadow: 0px 10px #b0bec5, 0px -10px #b0bec5, 10px 0px #b0bec5, -10px 0px #b0bec5;
 }
