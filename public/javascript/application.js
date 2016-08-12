@@ -15,8 +15,8 @@ $(document).ready(function() {
   $('#ask_button').on('click', function() {
     $.post("http://localhost:3000/ask", { query: $('#query').val() })
       .done(function(response) {
-        $('#output_box').append(response);
-        $('#query').val("")
+        $('#output_box').append("you: " + $('#query').val() + "\n" + response + "\n");
+        $('#query').val("");
       });
   });
 
@@ -24,7 +24,7 @@ $(document).ready(function() {
     var contents = String($('#query').val())
     $('#query').val(contents + 'zip.ask(')
   });
-  
+
   $('#zap').on('click', function() {
     var contents = String($('#query').val())
     $('#query').val(contents + 'zap.ask(')
