@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="http://i.imgur.com/qOlFGlV.png" width="400px"/>
+  <img src="http://i.imgur.com/qOlFGlV.png"/>
 </p>
 
 Inspired by the riddle of the truth teller and the lair, we have set out to model the old brainteaser in a fun and modern way... with space and pie!
