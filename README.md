@@ -1,4 +1,6 @@
-<h1 align="center">PIES, LIES, AND GALAXIES </h1>
+<p align="center">
+  <img src="http://imgur.com/a/0vfuu"/>
+</p>
 
 Inspired by the riddle of the truth teller and the lair, we have set out to model the old brainteaser in a fun and modern way... with space and pie!
 
