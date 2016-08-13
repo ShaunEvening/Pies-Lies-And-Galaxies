@@ -39,8 +39,9 @@ $(document).ready(function() {
     $('#function-call').val(contents + 'zip.ask(');
 
     var askeeLine = $('#askee-value').text();
-    if (askeeLine == "<Clicking an alien assigns them a query>") {
-      $('#askee-value').text("Ask Zip if ");
+    if (askeeLine.includes("<Clicking an alien assigns them a query>")) {
+      askeeLine = askeeLine.replace("<Clicking an alien assigns them a query>", "Ask Zip if ");
+      $('#askee-value').text(askeeLine)
     } else {
       askeeLine = askeeLine.replace("if", "to ask Zip if")
       $('#askee-value').text(askeeLine)
@@ -52,8 +53,9 @@ $(document).ready(function() {
     $('#function-call').val(contents + 'zap.ask(');
 
     var askeeLine = $('#askee-value').text();
-    if (askeeLine == "<Clicking an alien assigns them a query>") {
-      $('#askee-value').text("Ask Zap if ");
+    if (askeeLine.includes("<Clicking an alien assigns them a query>")) {
+      askeeLine = askeeLine.replace("<Clicking an alien assigns them a query>", "Ask Zap if ");
+      $('#askee-value').text(askeeLine)
     } else {
       askeeLine = askeeLine.replace("if", "to ask Zap if")
       $('#askee-value').text(askeeLine)

@@ -8,7 +8,6 @@ class Alien
   end
 
   def ask(query)
-    puts "Calling #{query} from alien..."
     game.evaluate(rephrase(query).to_s)
   end
 
