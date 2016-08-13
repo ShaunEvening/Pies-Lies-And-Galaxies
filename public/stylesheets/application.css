@@ -123,7 +123,7 @@ img.food-img {
   width:100%;
 }
 
-#zip {
+#zip-img {
   position: absolute;
   width: 15%;
   bottom: 50px;
@@ -131,7 +131,7 @@ img.food-img {
   cursor: pointer;
 }
 
-#zap {
+#zap-img {
   position: absolute;
   width:15%;
   bottom: 50px;

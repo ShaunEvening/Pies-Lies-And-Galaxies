@@ -34,7 +34,7 @@ $(document).ready(function() {
     $('#function-call').val("");
   });
 
-  $('#zip').on('click', function() {
+  $('#zip-img').on('click', function() {
     var contents = $('#function-call').val();
     $('#function-call').val(contents + 'zip.ask(');
 
@@ -48,7 +48,7 @@ $(document).ready(function() {
     }
   });
 
-  $('#zap').on('click', function() {
+  $('#zap-img').on('click', function() {
     var contents = $('#function-call').val();
     $('#function-call').val(contents + 'zap.ask(');
 

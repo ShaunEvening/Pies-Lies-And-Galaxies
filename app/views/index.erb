@@ -1,6 +1,6 @@
 
-<img src="images/sprites/zap-crop.gif" id="zap" class="tooltipped" data-position="top" data-tooltip="Ask zap"/>
-<img src="images/sprites/zip-crop.gif"  id="zip" class="tooltipped" data-position="top" data-tooltip="Ask Zip"/>
+<img src="images/sprites/zap-crop.gif" id="zap-img" class="tooltipped" data-position="top" data-tooltip="Ask zap"/>
+<img src="images/sprites/zip-crop.gif"  id="zip-img" class="tooltipped" data-position="top" data-tooltip="Ask Zip"/>
 
 <div class="pie-box">
   <img src="images/sprites/pink-pie.gif" class="pi-p tooltipped" id="red-pie" data-position="top" data-tooltip="Pick the red pie" />
@@ -12,11 +12,6 @@
 </div>
 
 <div class="hud-box">
-  <!-- <div class="row">
-    <div class="questions-panel z-depth-1">
-      <h6 class="center 8-bit">Please ask a question</h6>
-    </div>
-  </div> -->
   <div class="row">
     <a id="info-btn" class="btn waves-effect waves-light light-blue center-btn modal-trigger" href="#info" style="width: 100%;">
       info
@@ -50,20 +45,21 @@
 <div id="query-builder" class="query-modal modal">
   <div class="modal-content">
     <h4 class="center">Build-a-query</h4>
-    <p class="center">
-      <button class="btn btn-flat bldr-obj" id="veritopian">The veritopian</button>
-      <button class="btn btn-flat bldr-obj" id="misinformian">The misinformian </button>
-      <button class="btn btn-flat bldr-obj" id="zip">zip</button>
-      <button class="btn btn-flat bldr-obj" id="zap">zap</button>
-      <button class="btn btn-flat bldr-obj" id="pie_of_life">The Pie of life</button>
-      <button class="btn btn-flat bldr-obj" id="pie_of_vague_discomfort">The pie of vague discomfort</button>
-      <button class="btn btn-flat bldr-obj" id="red_pie">the red pie</button>
-      <button class="btn btn-flat bldr-obj" id="purple-pie">the purple pie</button>
-      <br/>
+      <div class="row">
+        <button class="btn btn-flat center-btn bldr-obj" id="veritopian">The veritopian</button>
+        <button class="btn btn-flat center-btn bldr-obj" id="misinformian">The misinformian </button>
+        <button class="btn btn-flat center-btn bldr-obj" id="zip">zip</button>
+        <button class="btn btn-flat center-btn bldr-obj" id="zap">zap</button>
+        <button class="btn btn-flat center-btn bldr-obj" id="pie_of_life">The Pie of life</button>
+        <button class="btn btn-flat center-btn bldr-obj" id="pie_of_vague_discomfort">The pie of vague discomfort</button>
+        <button class="btn btn-flat center-btn bldr-obj" id="red_pie">the red pie</button>
+        <button class="btn btn-flat center-btn bldr-obj" id="purple-pie">the purple pie</button>
+      </div>
       <hr/>
-      <button class="btn btn-flat bldr-rel" id="is">is</button>
-      <button class="btn btn-flat bldr-rel" id="is-not">is not</button>
-    </p>
+      <div class="row">
+        <button class="btn btn-flat center-btn bldr-rel" id="is">is</button>
+        <button class="btn btn-flat center-btn bldr-rel" id="is-not">is not</button>
+      </div>
   </div>
   <div class="modal-footer">
     <a id="okay-btn" href="#" class="modal-action modal-close waves-effect waves-green btn-flat okay-btn">close</a>
