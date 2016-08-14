@@ -12,23 +12,23 @@
 
       <!-- Restuarant counter -->
       <div class="counter">
-        <img src="images/static/full-counter.png;" style="width: 80%; position: absolute; left: 10%"/>
+        <img src="images/static/full-counter.png;" class="counter-img"/>
       </div>
 
       <!-- Top right corner buttons -->
       <div class="hud-box">
         <div class="row">
-          <a id="info-btn" class="btn waves-effect waves-light light-blue center-btn modal-trigger" href="#info" style="width: 100%;">
+          <a id="info-btn" class="btn waves-effect waves-light light-blue center-btn modal-trigger tooltipped" href="#info" data-position="left" data-tooltip="See the instructions again">
             info
           </a>
         </div>
         <div class="row">
-          <a id="help-btn" class="btn waves-effect waves-light purple center-btn" style="width: 100%;">
+          <a id="help-btn" class="btn waves-effect waves-light purple center-btn tooltipped" data-position="left" data-tooltip="Get a hint">
             hint
           </a>
         </div>
         <div class="row">
-          <a id="give-up-btn" class="btn waves-effect waves-light red center-btn" style="width: 100%;">
+          <a id="give-up-btn" class="btn waves-effect waves-light red center-btn tooltipped" data-position="left" data-tooltip="BOOOOOOOO!">
             Give up
           </a>
         </div>
@@ -43,7 +43,7 @@
         </div>
         <div class="row valign-wrapper">
           <div class ="col s9">
-            <input type="text" class="query-box z-depth-2" id="query" readonly />
+            <input type="text" class="query-box z-depth-2 tooltipped" id="query" readonly data-position="left" data-tooltip="Click to build a query"/>
           </div>
           <div class ="col s3 valign-wrapper">
             <button id="ask_button" class="btn btn-inline light-blue lighten-2 valign waves-effect waves-light">ask</button>
@@ -55,7 +55,7 @@
       <div class="response-container">
       <h5 class="white-text">Dialog:</h5>
       <div class="response">
-        <textarea id="output_box" readonly></textarea>
+        <textarea id="output_box" class="tooltipped" readonly data-position="bottom" data-tooltip="View the answers here"></textarea>
       </div>
     </div>
     </div>
@@ -98,6 +98,16 @@
   </div>
   <div class="modal-footer">
     <a id="okay-btn" href="#" class="modal-action modal-close waves-effect waves-green btn-flat okay-btn">close</a>
+  </div>
+</div>
+
+<!-- End message modal -->
+<div id="ending-modal" class="modal">
+  <div class="modal-content">
+    <h4 class="center"></h4>
+  </div>
+  <div class="modal-footer">
+    <a id="okay-btn" href="#" class="modal-action modal-close waves-effect waves-green btn-flat okay-btn">Retry</a>
   </div>
 </div>
 

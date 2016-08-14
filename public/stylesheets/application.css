@@ -50,21 +50,10 @@ body {
   overflow: hidden;
 }
 
-.under-counter {
-  background: url('../images/static/counter.png');
-  width: 95%;
-  height: 85%;
-  display: block;
-  margin: 0 auto;
-}
-
-.counter-top {
-  background: url('../images/static/countertop.png');
-  width: 98%;
-  height: 15%;
-  display:block;
-  margin: 0 auto;
-  background-color: #78909c
+img.counter-img {
+  position: absolute;
+  width: 90%;
+  left: 5%;
 }
 
 .hud-box {
@@ -102,7 +91,8 @@ button.center-btn {
 
 #askee-value {
   color: white;
-  background-color: black;
+  background-color: #546e7a;
+  box-shadow: 0 4px 0 #37474f, 0 -4px 0 #37474f, 4px 0 0 #37474f, -4px 0 0 #37474f;
 }
 
 .margin-override {
@@ -133,16 +123,16 @@ input[type=text]:focus:not([readonly]) {
 #zip-img {
   position: absolute;
   width: 15%;
-  bottom: 50px;
-  left: 30%;
+  bottom: 12%;
+  left: 20%;
   cursor: pointer;
 }
 
 #zap-img {
   position: absolute;
   width:15%;
-  bottom: 50px;
-  right: 30%;
+  bottom: 12%;
+  right: 20%;
   cursor: pointer;
 }
 
@@ -156,7 +146,7 @@ input[type=text]:focus:not([readonly]) {
 .pie-box {
   width: 30%;
   position: absolute;
-  top: 30%;
+  bottom: 18%;
   left: 35%;
   /*border-bottom: 10px solid #4C4C4C;
   box-shadow: 0 10px 0 #383838;*/
@@ -186,18 +176,22 @@ input[type=text]:focus:not([readonly]) {
 
 #give-up-btn {
   box-shadow: 0px 4px #d50000, 0px -4px #d50000, 4px 0px #d50000, -4px 0px #d50000;
+  width: 100%;
 }
 
 #ask_button {
   box-shadow: 0px 4px #0091ea, 0px -4px #0091ea, 4px 0px #0091ea, -4px 0px #0091ea;
+  width: 100%;
 }
 
 #info-btn {
   box-shadow: 0px 4px #0091ea, 0px -4px #0091ea, 4px 0px #0091ea, -4px 0px #0091ea;
+  width: 100%;
 }
 
 #help-btn {
   box-shadow: 0px 4px #7b1fa2, 0px -4px #7b1fa2, 4px 0px #7b1fa2, -4px 0px #7b1fa2;
+  width: 100%;
 }
 
 .modal {
