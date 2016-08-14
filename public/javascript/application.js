@@ -24,7 +24,7 @@ $(document).ready(function() {
   $('#ask_button').on('click', function() {
     var query = $('#function-call').val().concat($('#query').val());
     query = appendBrackets(query);
-    $.post("http://localhost:3000/ask", { query: query })
+    $.post("http://localhost:3000/game/ask", { query: query })
       .done(function(response) {
         queryCount++;
         $('#output_box').append("you: " + query + "\n" + response + "\n");
@@ -63,14 +63,14 @@ $(document).ready(function() {
   });
 
   $('#red-pie').on('click', function() {
-    $.post("http://localhost:3000/solve", { solution: "red_pie" })
+    $.post("http://localhost:3000/game/solve", { solution: "red_pie" })
       .done(function(response) {
         $('#output_box').val(response);
       });
   });
 
   $('#purple-pie').on('click', function() {
-    $.post("http://localhost:3000/solve", { solution: "purple_pie" })
+    $.post("http://localhost:3000/game/solve", { solution: "purple_pie" })
       .done(function(response) {
         $('#output_box').append("\n" + response);
       });

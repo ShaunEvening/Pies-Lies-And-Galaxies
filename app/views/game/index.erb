@@ -1,0 +1,115 @@
+<!-- Container for locking aspect ratio (Currently not working) -->
+<div class="16-9-ratio">
+  <div class="game-container">
+    <div class="game">
+      <!-- Game Sprites -->
+      <img src="images/sprites/zap-crop.gif" id="zap-img" class="tooltipped" data-position="top" data-tooltip="Ask zap"/>
+      <img src="images/sprites/zip-crop.gif"  id="zip-img" class="tooltipped" data-position="top" data-tooltip="Ask Zip"/>
+      <div class="pie-box">
+        <img src="images/sprites/pink-pie.gif" class="pi-p tooltipped" id="red-pie" data-position="top" data-tooltip="Pick the red pie" />
+        <img src="images/sprites/purple-pie.gif" class="pur-p tooltipped" id="purple-pie" data-position="top" data-tooltip="Pick the purple pie"/>
+      </div>
+
+      <!-- Restuarant counter -->
+      <div class="counter">
+        <img src="images/static/full-counter.png;" class="counter-img"/>
+      </div>
+
+      <!-- Top right corner buttons -->
+      <div class="hud-box">
+        <div class="row">
+          <a id="info-btn" class="btn waves-effect waves-light light-blue center-btn modal-trigger tooltipped" href="#info" data-position="left" data-tooltip="See the instructions again">
+            info
+          </a>
+        </div>
+        <div class="row">
+          <a id="help-btn" class="btn waves-effect waves-light purple center-btn tooltipped" data-position="left" data-tooltip="Get a hint">
+            hint
+          </a>
+        </div>
+        <div class="row">
+          <a id="give-up-btn" class="btn waves-effect waves-light red center-btn tooltipped" data-position="left" data-tooltip="BOOOOOOOO!">
+            Give up
+          </a>
+        </div>
+      </div>
+
+      <!-- Query control -->
+      <div class="query-section valign">
+        <div class="row margin-override">
+          <div class="col s9">
+            <h6 id="askee-value" class="center">&lt;Clicking an alien assigns them a query&gt;</h6>
+          </div>
+        </div>
+        <div class="row valign-wrapper">
+          <div class ="col s9">
+            <input type="text" class="query-box z-depth-2 tooltipped" id="query" readonly data-position="left" data-tooltip="Click to build a query"/>
+          </div>
+          <div class ="col s3 valign-wrapper">
+            <button id="ask_button" class="btn btn-inline light-blue lighten-2 valign waves-effect waves-light">ask</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dialog box -->
+      <div class="response-container">
+      <h5 class="white-text">Dialog:</h5>
+      <div class="response">
+        <textarea id="output_box" class="tooltipped" readonly data-position="bottom" data-tooltip="View the answers here"></textarea>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- opening info modal -->
+<div id="info" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4 class="center">Pies, Lies, and Galaxies</h4>
+    <p class="center">
+      red waistcoat roof party letterpress, +1 organic leggings keffiyeh poutine taxidermy seitan tofu. Schlitz messenger bag quinoa thundercats, tousled keffiyeh organic crucifix banjo leggings literally actually bespoke. Street art slow-carb gochujang, yr echo park flexitarian food truck ennui microdosing shabby chic truffaut normcore pabst polaroid. Wolf lomo tofu, occupy listicle beard selvage quinoa blue bottle lo-fi letterpress actually messenger bag. Intelligentsia vegan paleo blue bottle, tacos stumptown polaroid bicycle rights venmo flexitarian. Chartreuse sustainable cardigan artisan locavore tumblr. Gochujang venmo occupy PBR&B everyday carry fingerstache.
+      Ennui mlkshk pabst kogi, chillwave tumblr crucifix. Etsy chia cold-pressed, kitsch PBR&B aesthetic keffiyeh locavore tacos slow-carb yr typewriter taxidermy fingerstache. Keytar raw denim disrupt selfies, fanny pack tote bag 3 wolf moon heirloom you probably haven't heard of them cold-pressed master cleanse. Thundercats letterpress seitan, ramps bicycle rights forage chillwave. Cliche gentrify marfa try-hard schlitz, brooklyn whatever viral pabst plaid affogato. Chambray squid ugh vegan ethical pork belly pickled. Celiac seitan fingerstache pabst.
+    </p>
+  </div>
+  <div class="modal-footer">
+    <a id="okay-btn" href="#" class="modal-action modal-close waves-effect waves-green btn-flat okay-btn">OKAY</a>
+  </div>
+</div>
+
+<!-- Query building modal -->
+<div id="query-builder" class="query-modal modal">
+  <div class="modal-content">
+    <h4 class="center">Build-a-query</h4>
+      <div class="row">
+        <button class="btn btn-flat center-btn bldr-obj" id="veritopian">The veritopian</button>
+        <button class="btn btn-flat center-btn bldr-obj" id="misinformian">The misinformian </button>
+        <button class="btn btn-flat center-btn bldr-obj" id="zip">zip</button>
+        <button class="btn btn-flat center-btn bldr-obj" id="zap">zap</button>
+        <button class="btn btn-flat center-btn bldr-obj" id="pie_of_life">The Pie of life</button>
+        <button class="btn btn-flat center-btn bldr-obj" id="pie_of_vague_discomfort">The pie of vague discomfort</button>
+        <button class="btn btn-flat center-btn bldr-obj" id="red_pie">the red pie</button>
+        <button class="btn btn-flat center-btn bldr-obj" id="purple-pie">the purple pie</button>
+      </div>
+      <hr/>
+      <div class="row">
+        <button class="btn btn-flat center-btn bldr-rel" id="is">is</button>
+        <button class="btn btn-flat center-btn bldr-rel" id="is-not">is not</button>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <a id="okay-btn" href="#" class="modal-action modal-close waves-effect waves-green btn-flat okay-btn">close</a>
+  </div>
+</div>
+
+<!-- End message modal -->
+<div id="ending-modal" class="modal">
+  <div class="modal-content">
+    <h4 class="center"></h4>
+  </div>
+  <div class="modal-footer">
+    <a id="okay-btn" href="#" class="modal-action modal-close waves-effect waves-green btn-flat okay-btn">Retry</a>
+  </div>
+</div>
+
+<input type=hidden id="function-call" value=""></input>
+<script type="text/javascript" src="/javascript/application.js"></script>

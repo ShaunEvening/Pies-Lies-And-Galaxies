@@ -1,11 +1,15 @@
 require 'json'
 
 get '/' do
-  session[:game] = Game.new
-  erb :index
+  erb :'index'
 end
 
-post '/ask' do
+get '/game' do
+  session[:game] = Game.new
+  erb :'game/index'
+end
+
+post '/game/ask' do
   begin
     session[:game].evaluate(params[:query].to_s) ? "Yes" : "No"
   rescue Game::InvalidQueryError => e
@@ -15,7 +19,7 @@ post '/ask' do
   end
 end
 
-post '/solve' do
+post 'game/solve' do
   if session[:game].winner?(params[:solution])
     "Correct! The terrible burden of immortality is forever yours to bear. Congratulations!"
   else
