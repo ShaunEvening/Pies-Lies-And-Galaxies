@@ -1,34 +1,68 @@
+<!-- Container for locking aspect ratio (Currently not working) -->
+<div class="16-9-ratio">
+  <div class="game-container">
+    <div class="game">
+      <!-- Game Sprites -->
+      <img src="images/sprites/zap-crop.gif" id="zap-img" class="tooltipped" data-position="top" data-tooltip="Ask zap"/>
+      <img src="images/sprites/zip-crop.gif"  id="zip-img" class="tooltipped" data-position="top" data-tooltip="Ask Zip"/>
+      <div class="pie-box">
+        <img src="images/sprites/pink-pie.gif" class="pi-p tooltipped" id="red-pie" data-position="top" data-tooltip="Pick the red pie" />
+        <img src="images/sprites/purple-pie.gif" class="pur-p tooltipped" id="purple-pie" data-position="top" data-tooltip="Pick the purple pie"/>
+      </div>
 
-<img src="images/sprites/zap-crop.gif" id="zap-img" class="tooltipped" data-position="top" data-tooltip="Ask zap"/>
-<img src="images/sprites/zip-crop.gif"  id="zip-img" class="tooltipped" data-position="top" data-tooltip="Ask Zip"/>
+      <!-- Restuarant counter -->
+      <div class="counter">
+        <img src="images/static/full-counter.png;" style="width: 80%; position: absolute; left: 10%"/>
+      </div>
 
-<div class="pie-box">
-  <img src="images/sprites/pink-pie.gif" class="pi-p tooltipped" id="red-pie" data-position="top" data-tooltip="Pick the red pie" />
-  <img src="images/sprites/purple-pie.gif" class="pur-p tooltipped" id="purple-pie" data-position="top" data-tooltip="Pick the purple pie"/>
+      <!-- Top right corner buttons -->
+      <div class="hud-box">
+        <div class="row">
+          <a id="info-btn" class="btn waves-effect waves-light light-blue center-btn modal-trigger" href="#info" style="width: 100%;">
+            info
+          </a>
+        </div>
+        <div class="row">
+          <a id="help-btn" class="btn waves-effect waves-light purple center-btn" style="width: 100%;">
+            hint
+          </a>
+        </div>
+        <div class="row">
+          <a id="give-up-btn" class="btn waves-effect waves-light red center-btn" style="width: 100%;">
+            Give up
+          </a>
+        </div>
+      </div>
+
+      <!-- Query control -->
+      <div class="query-section valign">
+        <div class="row margin-override">
+          <div class="col s9">
+            <h6 id="askee-value" class="center">&lt;Clicking an alien assigns them a query&gt;</h6>
+          </div>
+        </div>
+        <div class="row valign-wrapper">
+          <div class ="col s9">
+            <input type="text" class="query-box z-depth-2" id="query" readonly />
+          </div>
+          <div class ="col s3 valign-wrapper">
+            <button id="ask_button" class="btn btn-inline light-blue lighten-2 valign waves-effect waves-light">ask</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dialog box -->
+      <div class="response-container">
+      <h5 class="white-text">Dialog:</h5>
+      <div class="response">
+        <textarea id="output_box" readonly></textarea>
+      </div>
+    </div>
+    </div>
+  </div>
 </div>
 
-<div class="counter">
-  <img src="images/static/full-counter.png;" style="width: 80%; position: absolute; left: 10%"/>
-</div>
-
-<div class="hud-box">
-  <div class="row">
-    <a id="info-btn" class="btn waves-effect waves-light light-blue center-btn modal-trigger" href="#info" style="width: 100%;">
-      info
-    </a>
-  </div>
-  <div class="row">
-    <a id="help-btn" class="btn waves-effect waves-light purple center-btn" style="width: 100%;">
-      help!
-    </a>
-  </div>
-  <div class="row">
-    <a id="give-up-btn" class="btn waves-effect waves-light red center-btn" style="width: 100%;">
-      Give up
-    </a>
-  </div>
-</div>
-
+<!-- opening info modal -->
 <div id="info" class="modal modal-fixed-footer">
   <div class="modal-content">
     <h4 class="center">Pies, Lies, and Galaxies</h4>
@@ -42,6 +76,7 @@
   </div>
 </div>
 
+<!-- Query building modal -->
 <div id="query-builder" class="query-modal modal">
   <div class="modal-content">
     <h4 class="center">Build-a-query</h4>
@@ -66,23 +101,4 @@
   </div>
 </div>
 
-
-<div class="query-section valign">
-  <h5 class="white-text" id="askee-value" style="background-color: black;">&lt;Clicking an alien assigns them a query&gt;</h5>
-  <div class="row valign-wrapper">
-    <div class ="col s9">
-      <input type="text" class="query-box z-depth-2" id="query" readonly />
-    </div>
-    <div class ="col s3 valign-wrapper">
-      <button id="ask_button" class="btn btn-inline light-blue lighten-2 valign waves-effect waves-light">ask</button>
-    </div>
-  </div>
-</div>
-
-<div class="response-container">
-  <h5 class="white-text">Dialog:</h5>
-  <div class="response">
-    <textarea id="output_box" readonly></textarea>
-  </div>
-</div>
 <input type=hidden id="function-call" value=""></input>
