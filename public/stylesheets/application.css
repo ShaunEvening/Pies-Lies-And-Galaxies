@@ -158,7 +158,7 @@ input[type=text]:focus:not([readonly]) {
   display: inline;
   float: left;
   cursor: pointer;
-  margin-left: 30px;
+  margin-left: 35px;
 }
 
 .pur-p {
@@ -167,7 +167,7 @@ input[type=text]:focus:not([readonly]) {
   display: inline;
   float: right;
   cursor: pointer;
-  margin-right: 30px;
+  margin-right: 35px;
 }
 
 .btn {
@@ -223,4 +223,21 @@ input[type=text]:focus:not([readonly]) {
 
 #output_box:focus {
   outline: none;
+}
+
+/*     Starting screen style     */
+.start-screen {
+    width: 100%;
+    height: 100%;
+}
+
+img.logo {
+  width: 40%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+button#start-btn {
+  
 }
