@@ -101,8 +101,15 @@ $(document).ready(function() {
     $('#hint').openModal();
   });
 
-  $('#quit-btn').on('click', function() {
-
+  $('#give-up-btn').on('click', function() {
+    $('#ending-modal .modal-content h4').html("You gave up!?!");
+    $.get("http://localhost:3000/game/give-up")
+      .done(function(response) {
+        var modalText = "Really? Just no pie at all? What a waste!<br/><br/>This was the game state:<br/><br/>"
+          + response + "<br/>Why not try again?"
+        $('#ending-modal .modal-content p').html(modalText);
+        $('#ending-modal').openModal();
+      });
   });
 
 });
