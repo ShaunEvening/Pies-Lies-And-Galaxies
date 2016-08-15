@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   var queryCount = 0;
+  var queried_party = '';
 
   $('.modal-trigger').leanModal({
       dismissible: true, // Modal can be dismissed by clicking outside of the modal
@@ -23,24 +24,31 @@ $(document).ready(function() {
 
   $('#ask_button').on('click', function() {
     var query = $('#function-call').val().concat($('#query').val());
-    query = appendBrackets(query);
+    query = closeOpenBrackets(query);
+    $('#output_box').text('');
+    $('#output_box').append("You ask " + queried_party + " " + parseQuestion() + ".\n" + queried_party + " is thinking...\n");
     $.post("http://localhost:3000/game/ask", { query: query })
       .done(function(response) {
         queryCount++;
-        $('#output_box').append("you: " + query + "\n" + response + "\n");
+        $('#output_box').append(queried_party + " says " + response + ".");
+        queried_party = '';
       });
-    $('#askee-value').text("<Clicking an alien assigns them a query>");
+    $('#askee-value').text("<Clicking aliens includes them in the query>");
     $('#query').val("");
     $('#function-call').val("");
   });
 
   $('#zip-img').on('click', function() {
+    if (queried_party == '') {
+      queried_party = 'Zip';
+    }
+
     var contents = $('#function-call').val();
     $('#function-call').val(contents + 'zip.ask(');
 
     var askeeLine = $('#askee-value').text();
-    if (askeeLine.includes("<Clicking an alien assigns them a query>")) {
-      askeeLine = askeeLine.replace("<Clicking an alien assigns them a query>", "Ask Zip if ");
+    if (askeeLine.includes("<Clicking aliens includes them in the query>")) {
+      askeeLine = askeeLine.replace("<Clicking aliens includes them in the query>", "Ask Zip if");
       $('#askee-value').text(askeeLine)
     } else {
       askeeLine = askeeLine.replace("if", "to ask Zip if")
@@ -49,12 +57,16 @@ $(document).ready(function() {
   });
 
   $('#zap-img').on('click', function() {
+    if (queried_party == '') {
+      queried_party = 'Zap';
+    }
+
     var contents = $('#function-call').val();
     $('#function-call').val(contents + 'zap.ask(');
 
     var askeeLine = $('#askee-value').text();
-    if (askeeLine.includes("<Clicking an alien assigns them a query>")) {
-      askeeLine = askeeLine.replace("<Clicking an alien assigns them a query>", "Ask Zap if ");
+    if (askeeLine.includes("<Clicking aliens includes them in the query>")) {
+      askeeLine = askeeLine.replace("<Clicking aliens includes them in the query>", "Ask Zap if");
       $('#askee-value').text(askeeLine)
     } else {
       askeeLine = askeeLine.replace("if", "to ask Zap if")
@@ -96,7 +108,7 @@ $(document).ready(function() {
 
 });
 
-var appendBrackets = function(input) {
+var closeOpenBrackets = function(input) {
   var indexCap = input.length - 1;
   for (var i = 0; i <= indexCap; i++) {
     if (input.charAt(i) == '(') {
@@ -104,4 +116,9 @@ var appendBrackets = function(input) {
     }
   }
   return input
+}
+
+var parseQuestion = function() {
+  var endOfFirstIf = $('#askee-value').text().indexOf("f");
+  return $('#askee-value').text().substr(endOfFirstIf - 1);
 }

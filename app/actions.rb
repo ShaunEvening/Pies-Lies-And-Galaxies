@@ -15,11 +15,11 @@ post '/game/ask' do
   rescue Game::InvalidQueryError => e
     e.message
   rescue NameError => e
-    "I don't know this language?"
+    "not sure"
   end
 end
 
-post 'game/solve' do
+post '/game/solve' do
   if session[:game].winner?(params[:solution])
     "Correct! The terrible burden of immortality is forever yours to bear. Congratulations!"
   else

@@ -16,7 +16,7 @@ class Game
 
   def evaluate(query)
     return eval(query) unless query.empty?
-    raise InvalidQueryError, "Did you have a question?"
+    raise InvalidQueryError, "nothing"
   end
 
   def winner?(solution)
