@@ -21,7 +21,6 @@ $(document).ready(function() {
     $('#query-builder').openModal()
   });
 
-
   $('#ask_button').on('click', function() {
     var query = $('#function-call').val().concat($('#query').val());
     query = closeOpenBrackets(query);
@@ -105,6 +104,12 @@ $(document).ready(function() {
     $('#query').val($('#query').val() + ' != ');
     $('#askee-value').text($('#askee-value').text() + ' ' + $(this).text())
   });
+
+  $('#help-btn').on('click', function() {
+    $('#hint').openModal();
+  });
+
+
 
 });
 
