@@ -41,49 +41,41 @@ $(document).ready(function() {
     if (queried_party == '') {
       queried_party = 'Zip';
     }
-
-    var contents = $('#function-call').val();
-    $('#function-call').val(contents + 'zip.ask(');
-
-    var askeeLine = $('#askee-value').text();
-    if (askeeLine.includes("<Clicking aliens includes them in the query>")) {
-      askeeLine = askeeLine.replace("<Clicking aliens includes them in the query>", "Ask Zip if");
-      $('#askee-value').text(askeeLine)
-    } else {
-      askeeLine = askeeLine.replace("if", "to ask Zip if")
-      $('#askee-value').text(askeeLine)
-    }
+    addToFunctionCall('zip');
+    updateReadableQueryLine('Zip')
   });
 
   $('#zap-img').on('click', function() {
     if (queried_party == '') {
       queried_party = 'Zap';
     }
-
-    var contents = $('#function-call').val();
-    $('#function-call').val(contents + 'zap.ask(');
-
-    var askeeLine = $('#askee-value').text();
-    if (askeeLine.includes("<Clicking aliens includes them in the query>")) {
-      askeeLine = askeeLine.replace("<Clicking aliens includes them in the query>", "Ask Zap if");
-      $('#askee-value').text(askeeLine)
-    } else {
-      askeeLine = askeeLine.replace("if", "to ask Zap if")
-      $('#askee-value').text(askeeLine)
-    }
+    addToFunctionCall('zap');
+    updateReadableQueryLine('Zap')
   });
 
   $('#red-pie').on('click', function() {
     $.post("http://localhost:3000/game/solve", { solution: "red_pie" })
       .done(function(response) {
-        $('#output_box').val(response);
+        if (response.includes("Congratulations")) {
+          $('#ending-modal .modal-content h4').html("You've won!");
+        } else {
+          $('#ending-modal .modal-content h4').html("You've lost :(")
+        }
+        $('#ending-modal .modal-content p').html(response);
+        $('#ending-modal').openModal();
       });
   });
 
   $('#purple-pie').on('click', function() {
     $.post("http://localhost:3000/game/solve", { solution: "purple_pie" })
       .done(function(response) {
-        $('#output_box').append("\n" + response);
+        if (response.includes("Congratulations")) {
+          $('#ending-modal .modal-content h4').html("You've won!");
+        } else {
+          $('#ending-modal .modal-content h4').html("You've lost :(")
+        }
+        $('#ending-modal .modal-content p').html(response);
+        $('#ending-modal').openModal();
       });
   });
 
@@ -109,7 +101,9 @@ $(document).ready(function() {
     $('#hint').openModal();
   });
 
+  $('#quit-btn').on('click', function() {
 
+  });
 
 });
 
@@ -127,3 +121,18 @@ var parseQuestion = function() {
   var endOfFirstIf = $('#askee-value').text().indexOf("f");
   return $('#askee-value').text().substr(endOfFirstIf - 1);
 }
+ var addToFunctionCall = function(alien) {
+   var contents = $('#function-call').val();
+   $('#function-call').val(contents + alien + '.ask(');
+ }
+
+ var updateReadableQueryLine = function(alien) {
+   var askeeLine = $('#askee-value').text();
+   if (askeeLine.includes("<Clicking aliens includes them in the query>")) {
+     askeeLine = askeeLine.replace("<Clicking aliens includes them in the query>", "Ask " + alien + " if");
+     $('#askee-value').text(askeeLine)
+   } else {
+     askeeLine = askeeLine.replace("if", "to ask " + alien + " if")
+     $('#askee-value').text(askeeLine)
+   }
+ }
