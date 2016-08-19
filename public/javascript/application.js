@@ -18,7 +18,7 @@ $(document).ready(function() {
   $('.tooltipped').tooltip({delay: 50});
 
   $('#query').on('click',function(){
-    $('#query-builder').openModal()
+    $('#query-builder').openModal();
   });
 
   $('#ask_button').on('click', function() {
