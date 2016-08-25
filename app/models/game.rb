@@ -1,5 +1,4 @@
 require_relative "alien"
-require_relative "space_pie"
 
 class Game
 
@@ -25,20 +24,20 @@ class Game
 
   private
     def randomize_pies
-      @red_pie = SpacePie.new()
-      @purple_pie = SpacePie.new()
-      pie_array = [@red_pie, @purple_pie]
-      @pie_of_life = pie_array.delete_at(rand(1000) % pie_array.size)
-      @pie_of_vague_discomfort = pie_array.pop
+      @red_pie = 0
+      @purple_pie = 1
+      random_number = (rand(100) % 2)
+      @pie_of_life = random_number
+      @pie_of_vague_discomfort = 1 - random_number
     end
 
     def randomize_aliens
       alien_array = [Alien.new(false, self), Alien.new(true, self)]
       @misinformian = alien_array[0]
       @veritopian = alien_array[1]
-      alien_array.shuffle!
-      @zip = alien_array[0]
-      @zap = alien_array[1]
+      random_number = (rand(100) % 2)
+      @zip = alien_array[random_number]
+      @zap = alien_array[1 - random_number]
     end
 
 end
