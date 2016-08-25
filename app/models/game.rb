@@ -39,5 +39,4 @@ class Game
       @zip = alien_array[random_number]
       @zap = alien_array[1 - random_number]
     end
-
 end
