@@ -1,3 +1,4 @@
+/*       layout stlying       */
 @font-face {
     font-family: 'bit'; /*a name to be used later*/
     src: url('../font/slkscr.ttf'); /*URL to font*/
@@ -11,22 +12,121 @@ body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  background: url(../images/static/bars.png);
+  background-size: 30%;
 }
 
-.16-9-ratio {
-  width: 80%;
+/* materialize button override */
+a.btn,
+button.btn {
+  border-radius: 0;
+}
+
+.margin-override {
+  margin-bottom: 10px;
+}
+
+.modal {
+  border-radius: 0;
+  box-shadow: 0px 10px #b0bec5, 0px -10px #b0bec5, 10px 0px #b0bec5, -10px 0px #b0bec5;
+}
+
+/* button styles */
+a.btn-full,
+button.btn-full {
+  width: 100%;
+}
+
+a.bit-blue,
+button.bit-blue{
+  background-color: #2196f3;
+  box-shadow: 0 4px 0 #1565c0, 0 -4px 0 #1565c0, 4px 0 0 #1565c0, -4px 0 0 #1565c0;
+}
+
+a.bit-blue:hover,
+button.bit-blue:hover{
+  background-color: #1e88e5;
+  box-shadow: 0 4px 0 #0d47a1, 0 -4px 0 #0d47a1, 4px 0 0 #0d47a1, -4px 0 0 #0d47a1;
+}
+
+a.bit-light-blue,
+button.bit-light-blue{
+  background-color: #03a9f4;
+  box-shadow: 0 4px 0 #0277bd, 0 -4px 0 #0277bd, 4px 0 0 #0277bd, -4px 0 0 #0277bd;
+}
+
+a.bit-light-blue:hover,
+button.bit-light-blue:hover{
+  background-color: #039be5;
+  box-shadow: 0 4px 0 #01579b, 0 -4px 0 #01579b, 4px 0 0 #01579b, -4px 0 0 #01579b;
+}
+
+a.bit-purple,
+button.bit-purple{
+  background-color: #673ab7;
+  box-shadow: 0 4px 0 #4527a0, 0 -4px 0 #4527a0, 4px 0 0 #4527a0, -4px 0 0 #4527a0;
+}
+
+a.bit-purple:hover,
+button.bit-purple:hover{
+  background-color: #5e35b1;
+  box-shadow: 0 4px 0 #311b92, 0 -4px 0 #311b92, 4px 0 0 #311b92, -4px 0 0 #311b92;
+}
+
+a.bit-red,
+button.bit-red{
+  background-color: #f44336;
+  box-shadow: 0 4px 0 #c62828, 0 -4px 0 #c62828, 4px 0 0 #c62828, -4px 0 0 #c62828;
+}
+
+a.bit-red:hover,
+button.bit-red:hover{
+  background-color: #e53935;
+  box-shadow: 0 4px 0 #b71c1c, 0 -4px 0 #b71c1c, 4px 0 0 #b71c1c, -4px 0 0 #b71c1c;
+}
+
+button.bldr-obj{
+  height:auto;
+}
+
+/*     Starting screen style     */
+.start-screen {
+    width: 100%;
+    height: 100%;
+    background: url('../images/sprites/start-menu1.gif');
+    background-size: cover;
+}
+
+img.start-screen-logo {
+  width: 100%;
+}
+
+div.logo-button-container {
+  width: 35%;
+  height: auto;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* GAME PAGE STYLES */
+/* game ratio box */
+div.ratio-16-9 {
+  width: 95%;
   display: inline-block;
   position: relative;
+  margin: 0 auto;
+  box-shadow: 10px 0 0 #07101C, -10px 0 0 #0E223B, 0 10px 0 #07101C, 0 -10px 0 #0E223B;
 }
 
-.16-9-ratio:after {
-  padding-top: 56.25%;
+div.ratio-16-9:after {
+  padding-top: 50%;
   /* 16:9 ratio */
   display: block;
   content: '';
 }
 
-.game-container {
+div.game-container {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -34,7 +134,7 @@ body {
   right: 0;
 }
 
-.game {
+div.game {
   width: 100%;
   height: 100%;
   background: url('../images/static/background-inside.png');
@@ -42,87 +142,8 @@ body {
   background-repeat: no-repeat;
 }
 
-.counter {
-  width: 100%;
-  height: 18%;
-  position: absolute;
-  bottom: 0px;
-  /*background: url('../images/static/full-counter.png') no-repeat;*/
-  z-index: 5;
-  overflow: hidden;
-}
-
-img.counter-img {
-  position: absolute;
-  width: 90%;
-  left: 5%;
-}
-
-.hud-box {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 15%;
-  padding: 15px;
-  z-index: 100;
-}
-
-.questions-panel {
-  width: 95%;
-  background-color: white;
-  padding: 10px;
-  margin: 0 auto;
-  display: block;
-  box-shadow: 0px 4px #cfd8dc, 0px -4px #cfd8dc, 4px 0px #cfd8dc, -4px 0px #cfd8dc;
-}
-
-button.center-btn {
-  margin: 0 auto;
-  display: block;
-  width: 95%;
-}
-
-.query-section {
-  position: absolute;
-  bottom: 0;
-  left: 25%;
-  width: 50%;
-  background-color: rgba(255,255,255,0.0);
-  z-index: 40;
-}
-
-#askee-value {
-  color: white;
-  background-color: #546e7a;
-  box-shadow: 0 4px 0 #37474f, 0 -4px 0 #37474f, 4px 0 0 #37474f, -4px 0 0 #37474f;
-}
-
-.margin-override {
-  margin-bottom: 10px;
-}
-
-input[type=text] {
-  background-color: white;
-  border: none;
-  padding: 5px 15px;
-  box-sizing: border-box;
-  margin: 0;
-  box-shadow: 0px 5px #546e7a, 0px -5px #546e7a, 5px 0px #546e7a, -5px 0px #546e7a;
-  font-family: 'Ubuntu Mono';
-}
-
-input[type=text]:focus:not([readonly]) {
-  border-bottom: none;
-  box-shadow: 0px 5px #455a64, 0px -5px #455a64, 5px 0px #455a64, -5px 0px #455a64;
-  font-family: 'Ubuntu Mono';
-}
-
-.full-container {
-  width: 100%;
-  height: 100%;
-}
-
-#zip-img {
+/* alien images */
+img#zip-img {
   position: absolute;
   width: 15%;
   bottom: 12%;
@@ -130,7 +151,7 @@ input[type=text]:focus:not([readonly]) {
   cursor: pointer;
 }
 
-#zap-img {
+img#zap-img {
   position: absolute;
   width:15%;
   bottom: 12%;
@@ -138,13 +159,7 @@ input[type=text]:focus:not([readonly]) {
   cursor: pointer;
 }
 
-.info-btn {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  z-index: 1000;
-}
-
+/* pie classes */
 .pie-box {
   width: 30%;
   position: absolute;
@@ -172,42 +187,67 @@ input[type=text]:focus:not([readonly]) {
   margin-right: 35px;
 }
 
-.btn {
-  border-radius: 0;
-}
-
-#give-up-btn {
-  box-shadow: 0px 4px #d50000, 0px -4px #d50000, 4px 0px #d50000, -4px 0px #d50000;
+/* counter styling */
+div.counter {
   width: 100%;
+  height: 18%;
+  position: absolute;
+  bottom: 0px;
+  /*background: url('../images/static/full-counter.png') no-repeat;*/
+  z-index: 5;
+  overflow: hidden;
 }
 
-#ask_button {
-  box-shadow: 0px 4px #0091ea, 0px -4px #0091ea, 4px 0px #0091ea, -4px 0px #0091ea;
-  width: 100%;
+img.counter-img {
+  position: absolute;
+  width: 90%;
+  left: 5%;
 }
 
-#info-btn {
-  box-shadow: 0px 4px #0091ea, 0px -4px #0091ea, 4px 0px #0091ea, -4px 0px #0091ea;
-  width: 100%;
+/*    HUD BOX     */
+.hud-box {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 15%;
+  padding: 15px;
+  z-index: 100;
 }
 
-#help-btn {
-  box-shadow: 0px 4px #7b1fa2, 0px -4px #7b1fa2, 4px 0px #7b1fa2, -4px 0px #7b1fa2;
-  width: 100%;
+button.center-btn {
+  margin: 0 auto;
+  display: block;
+  width: 95%;
 }
 
-.modal {
-  border-radius: 0;
-  box-shadow: 0px 10px #b0bec5, 0px -10px #b0bec5, 10px 0px #b0bec5, -10px 0px #b0bec5;
+/*     Query control box     */
+.query-section {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  background-color: rgba(255,255,255,0.0);
+  z-index: 40;
 }
 
-.response {
-  height: 100%;
+#askee-value {
+  color: white;
+  background-color: #546e7a;
+  box-shadow: 0 4px 0 #37474f, 0 -4px 0 #37474f, 4px 0 0 #37474f, -4px 0 0 #37474f;
+}
+
+input[type=text] {
   background-color: white;
-  box-shadow: 0px 4px #546e7a, 0px -4px #546e7a, 4px 0px #546e7a, -4px 0px #546e7a;
+  border: none;
+  padding: 5px 15px;
+  box-sizing: border-box;
+  margin: 0;
+  box-shadow: 0px 5px #546e7a, 0px -5px #546e7a, 5px 0px #546e7a, -5px 0px #546e7a;
+  font-family: 'Ubuntu Mono';
 }
 
-.response-container {
+/* Alien response */
+div.response-container {
   position: absolute;
   width: 20%;
   height: 120px;
@@ -215,7 +255,13 @@ input[type=text]:focus:not([readonly]) {
   left: 20px;
 }
 
-#output_box {
+div.response {
+  height: 100%;
+  background-color: white;
+  box-shadow: 0px 4px #546e7a, 0px -4px #546e7a, 4px 0px #546e7a, -4px 0px #546e7a;
+}
+
+textarea#output_box {
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -223,33 +269,7 @@ input[type=text]:focus:not([readonly]) {
   padding: 10px;
 }
 
-#output_box:focus {
-  outline: none;
-}
-
-/*     Starting screen style     */
-.start-screen {
-    width: 100%;
-    height: 100%;
-    background: url('../images/sprites/start-menu1.gif');
-    background-size: 100%;
-}
-
-img.logo {
-  width: 35%;
-  position: absolute;
-  top: 70px;
-  left: 60px;
-}
-
-a#start-btn {
-  position: absolute;
-  top: 330px;
-  width: 20%;
-  left: 160px;
-  box-shadow: 0 4px 0 #1565c0, 0 -4px 0 #1565c0, 4px 0 0 #1565c0, -4px 0 0 #1565c0;
-}
-
+/* Modal styling */
 .info-divider {
   margin: 20px 0;
   height: 1px;
@@ -259,8 +279,4 @@ a#start-btn {
 
 .modal#query-builder{
   width: 85%;
-}
-
-button.bldr-obj{
-  height:auto;
 }
