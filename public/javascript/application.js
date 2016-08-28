@@ -19,6 +19,23 @@ $(document).ready(function() {
 
   $('#query').on('click',function(){
     $('#query-builder').openModal();
+    $('#obj-1').children('button').attr('disabled', false);
+    $('#relation').children('button').attr('disabled', true);
+    $('#obj-2').children('button').attr('disabled', true);
+  });
+
+  $('#obj-1').on('click', 'button',function(){
+    $('#obj-1').children('button').attr('disabled', true);
+    $('#relation').children('button').attr('disabled', false);
+  });
+
+  $('#relation').on('click', 'button', function(){
+    $('#relation').children('button').attr('disabled', true);
+    $('#obj-2').children('button').attr('disabled', false);
+  });
+
+  $('#obj-2').on('click', 'button', function(){
+    $('#obj-2').children('button').attr('disabled', true);
   });
 
   $('#ask_button').on('click', function() {
