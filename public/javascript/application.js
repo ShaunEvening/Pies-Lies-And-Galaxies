@@ -19,13 +19,40 @@ $(document).ready(function() {
 
   $('#query').on('click',function(){
     $('#query-builder').openModal();
+    $('#obj-1').children('button').attr('disabled', false);
+    $('#relation').children('button').attr('disabled', true);
+    $('#obj-2').children('button').attr('disabled', true);
+  });
+
+  $('#obj-1').on('click', 'button',function(){
+    $('#obj-1').children('button').attr('disabled', true);
+    $('#relation').children('button').attr('disabled', false);
+  });
+
+  $('#relation').on('click', 'button', function(){
+    $('#relation').children('button').attr('disabled', true);
+    $('#obj-2').children('button').attr('disabled', false);
+  });
+
+  $('#obj-2').on('click', 'button', function(){
+    $('#obj-2').children('button').attr('disabled', true);
+  });
+
+  $('#clear-btn').on('click', function(){
+    $('#query').val('');
+    $('#obj-1').children('button').attr('disabled', false);
+    $('#relation').children('button').attr('disabled', true);
+    $('#obj-2').children('button').attr('disabled', true);
+    $('#function-call').val('');
+    $('#askee-value').text('<Clicking aliens includes them in the query>');
+    $('#query-builder').closeModal();
   });
 
   $('#ask_button').on('click', function() {
     var query = $('#function-call').val().concat($('#query').val());
     query = closeOpenBrackets(query);
     $('#output_box').text('');
-    $('#output_box').append("You ask " + queried_party + " " + parseQuestion() + ".\n" + queried_party + " is thinking...\n");
+    $('#output_box').append("You " + $('#askee-value').text() + ".\n" + queried_party + " is thinking...\n");
     $.post("http://localhost:3000/game/ask", { query: query })
       .done(function(response) {
         queryCount++;
