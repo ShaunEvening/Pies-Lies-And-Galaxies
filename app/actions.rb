@@ -7,7 +7,7 @@ helpers do
     accepted_phrases = ['ask','pie_of_life','pie_of_vague_discomfort','misinformian','veritopian',
       'zip','zap','red_pie','purple_pie', ' ']
     accepted_phrases.each { |phrase| query_str = query_str.gsub(phrase, '')}
-    query_str
+    query_str.length > 0
   end
 end
 
