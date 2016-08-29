@@ -1,7 +1,7 @@
-<!-- Container for locking aspect ratio (Currently not working) -->
-<div class="16-9-ratio">
+<div class="ratio-16-9 valign">
   <div class="game-container">
     <div class="game">
+
       <!-- Game Sprites -->
       <img src="images/sprites/zap-crop.gif" id="zap-img" class="tooltipped" data-position="top" data-tooltip="Ask zap"/>
       <img src="images/sprites/zip-crop.gif"  id="zip-img" class="tooltipped" data-position="top" data-tooltip="Ask Zip"/>
@@ -17,25 +17,25 @@
 
       <!-- Top right corner buttons -->
       <div class="hud-box">
-        <div class="row">
-          <a id="info-btn" class="btn waves-effect waves-light light-blue center-btn modal-trigger tooltipped" href="#info" data-position="left" data-tooltip="See the instructions again">
+        <div class="row center">
+          <a id="info-btn" class="btn btn-full bit-blue modal-trigger tooltipped" href="#info" data-position="left" data-tooltip="See the instructions again">
             info
           </a>
         </div>
-        <div class="row">
-          <a id="help-btn" class="btn waves-effect waves-light purple center-btn tooltipped" data-position="left" data-tooltip="You can't figure it out on your own?">
+        <div class="row center">
+          <a id="help-btn" class="btn btn-full bit-purple tooltipped" data-position="left" data-tooltip="You can't figure it out on your own?">
             hint
           </a>
         </div>
-        <div class="row">
-          <a id="give-up-btn" class="btn waves-effect waves-light red center-btn tooltipped" data-position="left" data-tooltip="BOOOOOOOO!">
+        <div class="row center">
+          <a id="give-up-btn" class="btn btn-full bit-red tooltipped" data-position="left" data-tooltip="BOOOOOOOO!">
             Give up
           </a>
         </div>
       </div>
 
       <!-- Query control -->
-      <div class="query-section valign">
+      <div class="query-section">
         <div class="row margin-override">
           <div class="col s9">
             <h6 id="askee-value" class="center">&lt;Clicking aliens includes them in the query&gt;</h6>
@@ -43,10 +43,10 @@
         </div>
         <div class="row valign-wrapper">
           <div class ="col s9">
-            <input type="text" class="query-box z-depth-2 tooltipped" id="query" readonly data-position="left" data-tooltip="Click to build a query"/>
+            <input type="text" class="query-box tooltipped" id="query" readonly data-position="left" data-tooltip="Click to build a query"/>
           </div>
           <div class ="col s3 valign-wrapper">
-            <button id="ask_button" class="btn btn-inline light-blue lighten-2 valign waves-effect waves-light">ask</button>
+            <button id="ask_button" class="btn btn-full btn-inline bit-light-blue valign">ask</button>
           </div>
         </div>
       </div>
@@ -62,97 +62,11 @@
   </div>
 </div>
 
-<!-- opening info modal -->
-<div id="info" class="modal modal-fixed-footer">
-  <div class="modal-content">
-    <h4 class="center">Pies, Lies, and Galaxies</h4>
-    <p>
-      You have travelled far to this remote space diner on the edge of the galaxy in search of the coveted
-      <span style="color:red">Pie of Life</span>, said to grant eternal life. Unfortunately, this diner serves other
-      pie as well, said to be only moderately delicious and leave one with a feeling of
-      <span style="color:red">vague discomfort</span>. To accidentally consume the wrong pie would be a rather
-      embarassing and costly slip indeed.<br/><br/>Two alien beings - <span style="color:red">Zip</span> and
-      <span style="color:red">Zap</span> - man the counter inside. According to locals, one is
-      <span style="color:red">Veritopian</span>, who's home planet has a strict policy for honesty; the other is
-      <span style="color:red">Misinformian</span>, who comes from a planet where lying is considered common courtesy.
-      You are unsure which is which.<br/><br/>You only have enough space-time for a single piece of space-pie and the
-      space-bus home, so space-choose wisely! Click an alien to ask it a question, providing a logical relation using
-      the Build-a-Query tool at the bottom of the page. Then click <span style="color:blue">ASK</span>!
-      <br/><br/>Note: Solving this in two or more queries is easy, but only a single query is needed if properly asked.
-    </p>
-  </div>
-  <div class="modal-footer">
-    <a id="okay-btn" href="#" class="modal-action modal-close waves-effect waves-green btn-flat okay-btn">OKAY</a>
-  </div>
-</div>
-
-<!-- hint modal -->
-<div id="hint" class="modal">
-  <div class="modal-content">
-    <h4 class="center">Hint!</h4>
-    <p>
-      Have you tried selecting <span style="color:red">more than one</span> alien? If one of them is a liar, what
-      can we expect the effect of this to be?
-    </p>
-  </div>
-  <div class="modal-footer">
-    <a id="okay-btn" href="#" class="modal-action modal-close waves-effect waves-green btn-flat okay-btn">Gotcha!</a>
-  </div>
-</div>
-
-<!-- Query building modal -->
-<div id="query-builder" class="query-modal modal modal-fixed-footer">
-  <div class="modal-content">
-    <h4 class="center">Build-a-query</h4>
-    <div class="info-divider"></div>
-    <div class="row">
-      <div class="col s4">
-        <h5 class="center">Object 1</h5>
-        <div class="info-divider"></div>
-        <button class="btn btn-flat center-btn bldr-obj" id="veritopian">The veritopian</button>
-        <button class="btn btn-flat center-btn bldr-obj" id="misinformian">The misinformian </button>
-        <button class="btn btn-flat center-btn bldr-obj" id="zip">zip</button>
-        <button class="btn btn-flat center-btn bldr-obj" id="zap">zap</button>
-        <button class="btn btn-flat center-btn bldr-obj" id="pie_of_life">The Pie of life</button>
-        <button class="btn btn-flat center-btn bldr-obj" id="pie_of_vague_discomfort">The pie of vague discomfort</button>
-        <button class="btn btn-flat center-btn bldr-obj" id="red_pie">the red pie</button>
-        <button class="btn btn-flat center-btn bldr-obj" id="purple_pie">the purple pie</button>
-      </div>
-      <div class="col s4">
-        <h5 class="center">Relation</h5>
-        <div class="info-divider"></div>
-        <button class="btn btn-flat center-btn bldr-rel" id="is">is</button>
-        <button class="btn btn-flat center-btn bldr-rel" id="is-not">is not</button>
-      </div>
-      <div class="col s4">
-        <h5 class="center">Object 2</h5>
-        <div class="info-divider"></div>
-        <button class="btn btn-flat center-btn bldr-obj" id="veritopian">The veritopian</button>
-        <button class="btn btn-flat center-btn bldr-obj" id="misinformian">The misinformian </button>
-        <button class="btn btn-flat center-btn bldr-obj" id="zip">zip</button>
-        <button class="btn btn-flat center-btn bldr-obj" id="zap">zap</button>
-        <button class="btn btn-flat center-btn bldr-obj" id="pie_of_life">The Pie of life</button>
-        <button class="btn btn-flat center-btn bldr-obj" id="pie_of_vague_discomfort">The pie of vague discomfort</button>
-        <button class="btn btn-flat center-btn bldr-obj" id="red_pie">the red pie</button>
-        <button class="btn btn-flat center-btn bldr-obj" id="purple_pie">the purple pie</button>
-      </div>
-    </div>
-  </div>
-  <div class="modal-footer">
-    <a id="okay-btn" href="#" class="modal-action modal-close btn-flat okay-btn">close</a>
-    <a href="#" class="btn-flat">Clear</a>
-  </div>
-</div>
-
-<!-- End message modal -->
-<div id="ending-modal" class="modal">
-  <div class="modal-content">
-    <h4 class="center"></h4><p class="center"></p>
-  </div>
-  <div class="modal-footer">
-    <a id="retry-btn" href="/game" class="modal-action modal-close waves-effect waves-green btn-flat okay-btn">Retry</a>
-  </div>
-</div>
+<!-- Load modal partials  -->
+<%= erb :'game/_info_modal' %>
+<%= erb :'game/_hint_modal' %>
+<%= erb :'game/_query_builder' %>
+<%= erb :'game/_end_modal' %>
 
 <input type=hidden id="function-call" value=""></input>
 <script type="text/javascript" src="/javascript/application.js"></script>

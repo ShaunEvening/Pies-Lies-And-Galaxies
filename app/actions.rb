@@ -1,5 +1,16 @@
 require 'json'
 
+helpers do
+  # remove all possible valid values from the query; if it's empty when we're done, it's valid and secure
+  def invalid_query?(query_str)
+    query_str = query_str.gsub(/[.=!()]/, '')
+    accepted_phrases = ['ask','pie_of_life','pie_of_vague_discomfort','misinformian','veritopian',
+      'zip','zap','red_pie','purple_pie', ' ']
+    accepted_phrases.each { |phrase| query_str = query_str.gsub(phrase, '')}
+    query_str.length > 0
+  end
+end
+
 get '/' do
   erb :'index'
 end
@@ -11,7 +22,9 @@ end
 
 post '/game/ask' do
   begin
-    session[:game].evaluate(params[:query].to_s) ? "Yes" : "No"
+    query = params[:query].to_s
+    raise Game::InvalidQueryError, "nice try" if invalid_query? query
+    session[:game].evaluate(query) ? "Yes" : "No"
   rescue Game::InvalidQueryError => e
     e.message
   rescue NameError => e
