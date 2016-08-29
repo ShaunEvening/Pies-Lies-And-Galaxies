@@ -49,19 +49,25 @@ $(document).ready(function() {
   });
 
   $('#ask_button').on('click', function() {
-    var query = $('#function-call').val().concat($('#query').val());
-    query = closeOpenBrackets(query);
-    $('#output_box').text('');
-    $('#output_box').append("You " + $('#askee-value').text() + ".\n" + queried_party + " is thinking...\n");
-    $.post("http://localhost:3000/game/ask", { query: query })
-      .done(function(response) {
-        queryCount++;
-        $('#output_box').append(queried_party + " says " + response + ".");
-        queried_party = '';
-      });
-    $('#askee-value').text("<Clicking aliens includes them in the query>");
-    $('#query').val("");
-    $('#function-call').val("");
+    if ($('#function-call').val() == '' || $('#query').val() == '') {
+      $('#output_box').text('');
+      $('#output_box').append('ERROR:\nYou must specify a query and an alien to receive that query.');
+    } else {
+      var query = $('#function-call').val().concat($('#query').val());
+      query = closeOpenBrackets(query);
+      $('#output_box').text('');
+      $('#output_box').append("You ask " + queried_party + " " + parseQuestion()
+        + ".\n" + queried_party + " is thinking...\n");
+      $.post("http://localhost:3000/game/ask", { query: query })
+        .done(function(response) {
+          queryCount++;
+          $('#output_box').append(queried_party + " says " + response + ".");
+          queried_party = '';
+        });
+      $('#askee-value').text("<Clicking aliens includes them in the query>");
+      $('#query').val("");
+      $('#function-call').val("");
+    }
   });
 
   $('#zip-img').on('click', function() {
